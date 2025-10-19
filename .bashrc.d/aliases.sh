@@ -41,6 +41,7 @@ alias umntcd='sudo umount /mnt/sr0'
 alias cryptopen='sudo cryptsetup luksOpen'
 
 alias ya='yadm'
+alias yag='git --work-tree=$HOME --git-dir=$HOME/.local/share/yadm/repo.git/'
 alias yazy='lazygit -w ~/ -g ~/.local/share/yadm/repo.git/'
 
 alias fdi='fd -I'

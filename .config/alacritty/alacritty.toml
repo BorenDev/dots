@@ -1,19 +1,20 @@
+general.import = [ "~/.config/omarchy/current/theme/alacritty.toml" ]
 
-[cursor.style]
-shape = "Block"
+[env]
+TERM = "xterm-256color"
 
 [font]
-size = 10.0
-
-[font.normal]
-family = "Cousine Nerd Font"
-#family = "FiraCode Nerd Font"
+normal = { family = "Cousine Nerd Font Mono" }
+bold = { family = "Cousine Nerd Font Mono" }
+italic = { family = "Cousine Nerd Font Mono" }
+size = 9
 
 [window]
-opacity = 1.00
+padding.x = 14
+padding.y = 14
+decorations = "None"
 
-[general]
-import = [
-    "~/.config/alacritty/mythemes/jellybeans.toml"
+[keyboard]
+bindings = [
+{ key = "F11", action = "ToggleFullscreen" }
 ]
-live_config_reload = true

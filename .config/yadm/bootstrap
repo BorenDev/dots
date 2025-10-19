@@ -1,0 +1,21 @@
+#!/bin/sh
+_yadm_cfg_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+# Because Git submodule commands cannot operate without a work tree, they must
+# be run from within $HOME (assuming this is the root of your dotfiles)
+cd "$HOME" || true
+
+yadm submodule update --recursive --init
+
+mkdir -p ~/.local/bin
+export PATH=~/.local/bin:"$PATH"
+
+if [ "$(uname)" = "Linux" ]; then
+    _distro_id=$(grep "^ID=" /etc/os-release | awk -F= '{print $2}')
+    if [ "$_distro_id" = "arch" ]; then
+        [ -f ~/.config/yadm/arch/bootstrap.sh ] && bash ~/.config/yadm/arch/bootstrap.sh
+    fi
+else
+    echo
+    # Assume windows for now...
+fi

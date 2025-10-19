@@ -1,0 +1,77 @@
+! ------------------------------------------------------------------------------
+!
+! ██╗  ██╗██████╗ ███████╗███████╗ ██████╗ ██╗   ██╗██████╗  ██████╗███████╗███████╗
+! ╚██╗██╔╝██╔══██╗██╔════╝██╔════╝██╔═══██╗██║   ██║██╔══██╗██╔════╝██╔════╝██╔════╝
+!  ╚███╔╝ ██████╔╝█████╗  ███████╗██║   ██║██║   ██║██████╔╝██║     █████╗  ███████╗
+!  ██╔██╗ ██╔══██╗██╔══╝  ╚════██║██║   ██║██║   ██║██╔══██╗██║     ██╔══╝  ╚════██║
+! ██╔╝ ██╗██║  ██║███████╗███████║╚██████╔╝╚██████╔╝██║  ██║╚██████╗███████╗███████║
+! ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝╚══════╝╚══════╝
+!
+! ------------------------------------------------------------------------------
+Xft.dpi:       96
+Xft.antialias: true
+Xft.hinting:   true
+Xft.rgba:      rgb
+Xft.autohint:  false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+
+! ------------------------------------------------------------------------------
+
+
+!--------------------------------------------------------------------------------
+!!:J:!! !Xft.dpi:       96
+!!:J:!! !Xft.dpi:       128
+!!:J:!! Xft.dpi:       176
+!!:J:!!
+!!:J:!! XTerm*background:        #222D31
+!!:J:!! XTerm*foreground:        #d8d8d8
+!!:J:!! XTerm*pointerColor:      #1ABB9B
+!!:J:!! XTerm*faceName:          Fixed
+!!:J:!! XTerm*faceSize:          14
+!!:J:!! XTerm*reverseVideo:      on
+!!:J:!! XTerm*selectToClipboard: true
+!!:J:!!
+!!:J:!! *background:                      #222D31
+!!:J:!! *foreground:                      #d8d8d8
+!!:J:!! *fading:                          8
+!!:J:!! *fadeColor:                       black
+!!:J:!! *cursorColor:                     #1ABB9B
+!!:J:!! *pointerColorBackground:          #2B2C2B
+!!:J:!! *pointerColorForeground:          #16A085
+!!:J:!!
+!!:J:!! !! black dark/light
+!!:J:!! *color0:                          #222D31
+!!:J:!! *color8:                          #585858
+!!:J:!!
+!!:J:!! !! red dark/light
+!!:J:!! *color1:                          #ab4642
+!!:J:!! *color9:                          #ab4642
+!!:J:!!
+!!:J:!! !! green dark/light
+!!:J:!! *color2:                          #7E807E
+!!:J:!! *color10:                         #8D8F8D
+!!:J:!!
+!!:J:!! !! yellow dark/light
+!!:J:!! *color3:                          #f7ca88
+!!:J:!! *color11:                         #f7ca88
+!!:J:!!
+!!:J:!! !! blue dark/light
+!!:J:!! *color4:                          #7cafc2
+!!:J:!! *color12:                         #7cafc2
+!!:J:!!
+!!:J:!! !! magenta dark/light
+!!:J:!! *color5:                          #ba8baf
+!!:J:!! *color13:                         #ba8baf
+!!:J:!!
+!!:J:!! !! cyan dark/light
+!!:J:!! *color6:                          #1ABB9B
+!!:J:!! *color14:                         #1ABB9B
+!!:J:!!
+!!:J:!! !! white dark/light
+!!:J:!! *color7:                          #d8d8d8
+!!:J:!! *color15:                         #f8f8f8
+!!:J:!!
+!!:J:!! Xcursor.theme: xcursor-breeze
+!!:J:!! Xcursor.size:                     0

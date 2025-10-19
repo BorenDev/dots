@@ -15,13 +15,16 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local secs_in_week = 604800
-
 -- Make sure to setup `mapleader` and `maplocalleader` before
 -- loading lazy.nvim so that mappings are correct.
 -- This is also a good place to setup other settings (vim.opt)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+
+require("config.editor")
+require("config.options")
+
+local secs_in_week = 604800
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -29,12 +32,20 @@ require("lazy").setup({
     -- import your plugins
     { import = "plugins" },
   },
+  dev = {
+    path = "~/projects/nvim-plugins",
+    patterns = {}, -- for example {"folke"}
+    fallback = false,
+  },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "habamax" } },
+  install = {
+    missing = true,
+    colorscheme = { "habamax" },
+  },
   -- automatically check for plugin updates
   checker = {
-    enabled = true,
+    enabled = false,
     frequency = secs_in_week, -- check weekly
     notify = false, -- get a notification when new updates are found
   },
@@ -42,3 +53,5 @@ require("lazy").setup({
     notify = false,
   },
 })
+
+require("config.keymaps")

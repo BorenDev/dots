@@ -1,17 +1,13 @@
--- local Util = require("ethro.utils")
-
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Add any additional keymaps here
 local kmap = vim.keymap.set
 
 -- Should be able to get the path from NVIM vars...?
-local nvim_init = "~/.config/nvim/lua/config/lazy.lua"
 local tmux_conf = "~/.config/tmux/tmux.conf"
 local bashrcd = "~/.bashrc.d/"
 local g_gitconfig = "~/.gitconfig"
 
 -- Edit common files
-kmap("n", "<leader>ev", ":tabedit" .. nvim_init .. "<CR>", { desc = "Edit nvim lazy.lua" })
 kmap("n", "<leader>et", ":tabedit" .. tmux_conf .. "<CR>", { desc = "Edit tmux.conf" })
 kmap("n", "<leader>eb", ":tabedit" .. bashrcd .. "<CR>", { desc = "Edit bashrc.d" })
 kmap("n", "<leader>eg", ":tabedit" .. g_gitconfig .. "<CR>", { desc = "Edit global gitconfig" })
@@ -45,6 +41,10 @@ kmap("n", "N", "'nN'[v:searchforward].'zz'", { expr = true, desc = "Prev search 
 kmap("x", "N", "'nN'[v:searchforward].'zz'", { expr = true, desc = "Prev search result" })
 kmap("o", "N", "'nN'[v:searchforward].'zz'", { expr = true, desc = "Prev search result" })
 
+-- saner behavior of j and k when wrapping
+vim.api.nvim_set_keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
+vim.api.nvim_set_keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
+
 -- lazy
 kmap("n", "<leader>Ol", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
@@ -66,17 +66,13 @@ local diagnostic_goto = function(next, severity)
   end
 end
 
-kmap("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+-- kmap("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 kmap("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
 kmap("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })
 kmap("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
 kmap("n", "[e", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
 kmap("n", "]w", diagnostic_goto(true, "WARN"), { desc = "Next Warning" })
 kmap("n", "[w", diagnostic_goto(false, "WARN"), { desc = "Prev Warning" })
-
-kmap("n", "<leader>td", function()
-  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
-end, { silent = true, noremap = true })
 
 -- quit
 kmap("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
@@ -99,21 +95,5 @@ kmap("n", "<leader>t<tab>", "<cmd>tabnew<cr>", { desc = "New Tab" })
 kmap("n", "<leader>tn", "<cmd>tabnext<cr>", { desc = "Next Tab" })
 kmap("n", "<leader>tc", "<cmd>tabclose<cr>", { desc = "Close Tab" })
 kmap("n", "<leader>tp", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
-
--- -- Harpoon ---------------------------------------------------------------------
--- local harpoon = require("harpoon")
--- kmap("n", "<M-a>", function()
---   harpoon:list():add()
--- end)
--- kmap("n", "<M-e>", function()
---   harpoon.ui:toggle_quick_menu(harpoon:list())
--- end)
--- -- Toggle previous & next buffers stored within Harpoon list
--- vim.keymap.set("n", "<M-p>", function()
---/home/a00/.config/nvim.bak/lua/ethro/plugins/telescope.lua   harpoon:list():prev()
--- end)
--- vim.keymap.set("n", "<M-n>", function()
---   harpoon:list():next()
--- end)
 
 kmap("n", "<Leader>nf", ":lua require('neogen').generate()<CR>", { desc = "Neogen generate", noremap = true, silent = true })

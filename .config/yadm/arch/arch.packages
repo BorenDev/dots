@@ -8,6 +8,7 @@ brightnessctl
 btop
 cargo
 clang
+cmake
 cups
 cups-browsed
 cups-filters
@@ -18,9 +19,11 @@ evince
 fd
 fzf
 git
+git-delta
 gnome-calculator
 gnome-keyring
 gnome-themes-extra
+go
 htop
 hypridle
 hyprland
@@ -45,10 +48,13 @@ luarocks
 man
 mpv
 nautilus
+npm
 nvim
+polybar
 ripgrep
 swaybg
 swayosd
+tmux
 tree-sitter-cli
 unzip
 waybar

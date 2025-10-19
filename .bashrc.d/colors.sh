@@ -16,11 +16,11 @@
 # su = (SETUID)   File that is setuid (u+s)
 # tw = (STICKY_OTHER_WRITABLE)    Directory that is sticky and other-writable (+t,o+w)
 # *.extension =   Every file using this extension e.g. *.rpm = files with the ending .rpm
-LS_COLORS=$LS_COLORS:'di=0;94:ow=0;0;35:ex=0;36:'
-export LS_COLORS
-
-# TODO: Which do i want?
-export LS_COLORS=$LS_COLORS':ow=0;0;35'
+# LS_COLORS=$LS_COLORS:'di=0;94:ow=0;0;35:ex=0;36:'
+# export LS_COLORS
+#
+# # TODO: Which do i want?
+# export LS_COLORS=$LS_COLORS':ow=0;0;35'
 
 # Show colors
 colors_00() {
